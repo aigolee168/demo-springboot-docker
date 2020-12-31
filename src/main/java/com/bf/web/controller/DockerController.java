@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DockerController {
 	
 	@GetMapping(value = "hello")
-    public Object sayHello(){
+    public Object hello(){
         return "hello! spring boot with docker.";
     }
 
