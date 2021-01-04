@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bf</groupId>
 	<artifactId>demo-springboot-docker</artifactId>
-	<version>0.0.3-SNAPSHOT</version>
+	<version>0.0.3</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -207,7 +207,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/aigolee168/demo-springboot-docker</connection>
 		<developerConnection>scm:git:https://github.com/aigolee168/demo-springboot-docker</developerConnection>
-		<tag>tiger</tag>
+		<tag>v0.0.3</tag>
 		<url>https://github.com/aigolee168/demo-springboot-docker</url>
 	</scm>
 	<repositories>
