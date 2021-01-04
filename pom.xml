@@ -1,10 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bf</groupId>
 	<artifactId>demo-springboot-docker</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.4</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -202,7 +200,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/aigolee168/demo-springboot-docker</connection>
 		<developerConnection>scm:git:https://github.com/aigolee168/demo-springboot-docker</developerConnection>
-		<tag>v0.0.3</tag>
+		<tag>v0.0.4</tag>
 		<url>https://github.com/aigolee168/demo-springboot-docker</url>
 	</scm>
 	<repositories>
