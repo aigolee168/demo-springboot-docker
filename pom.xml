@@ -4,10 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bf</groupId>
 	<artifactId>demo-springboot-docker</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -57,6 +58,11 @@
 	<build>
 		<finalName>demo-springboot-docker</finalName>
 		<plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M1</version>
+      </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -73,8 +79,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-<!-- 			
+			</plugin><!-- 
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
@@ -94,27 +99,206 @@
 					<buildArgs>
 						<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
+					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
 			</plugin> -->
 		</plugins>
 		<resources>
 			<resource>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>**/*.properties</include>
-					<include>**/*.xml</include>
-					<include>**/*.yml</include>
-				</includes>
-			</resource>
-			<resource>
 				<directory>src/main/java</directory>
-				<filtering>true</filtering>
 				<includes>
-					<include>**/*.properties</include>
 					<include>**/*.xml</include>
 				</includes>
 			</resource>
 		</resources>
 	</build>
+	<reporting>
+		<outputDirectory>${basedir}/target/site</outputDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+		</plugins>
+	</reporting>
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+	<organization>
+		<name>Codehaus Mojo</name>
+		<url>http://mojo.codehaus.org</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>jdoe</id>
+			<name>John Doe</name>
+			<email>jdoe@example.com</email>
+			<url>http://www.example.com/jdoe</url>
+			<organization>ACME</organization>
+			<organizationUrl>http://www.example.com</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>America/New_York</timezone>
+			<properties>
+				<picUrl>http://www.example.com/jdoe/pic</picUrl>
+			</properties>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Noelle</name>
+			<email>some.name@gmail.com</email>
+			<url>http://noellemarie.com</url>
+			<organization>Noelle Marie</organization>
+			<organizationUrl>http://noellemarie.com</organizationUrl>
+			<roles>
+				<role>tester</role>
+			</roles>
+			<timezone>America/Vancouver</timezone>
+			<properties>
+				<gtalk>some.name@gmail.com</gtalk>
+			</properties>
+		</contributor>
+	</contributors>
+	<name>demo</name>
+	<description>just test!</description>
+	<url>http://127.0.0.1:8080</url>
+	<inceptionYear>2020</inceptionYear>
+	<issueManagement>
+		<system>Bugzilla</system>
+		<url>http://127.0.0.1/bugzilla/</url>
+	</issueManagement>
+	<ciManagement>
+		<system>continuum</system>
+		<url>http://127.0.0.1:8080/continuum</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<sendOnError>true</sendOnError>
+				<sendOnFailure>true</sendOnFailure>
+				<sendOnSuccess>false</sendOnSuccess>
+				<sendOnWarning>false</sendOnWarning>
+				<configuration>
+					<address>continuum@127.0.0.1</address>
+				</configuration>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+	<mailingLists>
+		<mailingList>
+			<name>User List</name>
+			<subscribe>user-subscribe@127.0.0.1</subscribe>
+			<unsubscribe>user-unsubscribe@127.0.0.1</unsubscribe>
+			<post>user@127.0.0.1</post>
+			<archive>http://127.0.0.1/user/</archive>
+			<otherArchives>
+				<otherArchive>http://base.google.com/base/1/127.0.0.1</otherArchive>
+			</otherArchives>
+		</mailingList>
+	</mailingLists>
+	<scm>
+		<connection>scm:git:https://github.com/aigolee168/demo-springboot-docker</connection>
+		<developerConnection>scm:git:https://github.com/aigolee168/demo-springboot-docker</developerConnection>
+		<tag>tiger</tag>
+		<url>https://github.com/aigolee168/demo-springboot-docker</url>
+	</scm>
+	<prerequisites>
+		<maven>3.3.9</maven>
+	</prerequisites>
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>false</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>never</updatePolicy>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+			<name>Nexus Snapshots</name>
+			<id>snapshots-repo</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<layout>default</layout>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<repository>
+			<id>bolingcavalry-nexus-releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://127.0.0.1:9000/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>bolingcavalry-nexus-snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://127.0.0.1:9000/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<downloadUrl>http://mojo.codehaus.org/my-project</downloadUrl>
+		<site>
+			<id>mojo.website</id>
+			<name>Mojo Website</name>
+			<url>scp://beaver.codehaus.org/home/projects/mojo/public_html/</url>
+		</site>
+		<relocation>
+			<groupId>org.apache</groupId>
+			<artifactId>my-project</artifactId>
+			<version>1.0</version>
+			<message>We have moved the Project under Apache</message>
+		</relocation>
+	</distributionManagement>
+	<profiles>
+		<profile>
+			<id>test</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+				<jdk>1.5</jdk>
+				<os>
+					<name>Windows XP</name>
+					<family>Windows</family>
+					<arch>x86</arch>
+					<version>5.1.2600</version>
+				</os>
+				<property>
+					<name>sparrow-type</name>
+					<value>African</value>
+				</property>
+				<file>
+					<exists>${basedir}/file2.properties</exists>
+					<missing>${basedir}/file1.properties</missing>
+				</file>
+			</activation>
+			<build>
+
+			</build>
+			<modules>
+
+			</modules>
+			<repositories>
+
+			</repositories>
+			<pluginRepositories>
+
+			</pluginRepositories>
+			<dependencies>
+
+			</dependencies>
+			<reporting>
+
+			</reporting>
+			<dependencyManagement>
+
+			</dependencyManagement>
+			<distributionManagement>
+
+			</distributionManagement>
+		</profile>
+	</profiles>
 </project>
