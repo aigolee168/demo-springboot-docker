@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.bf</groupId>
 	<artifactId>demo-springboot-docker</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -207,7 +207,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/aigolee168/demo-springboot-docker</connection>
 		<developerConnection>scm:git:https://github.com/aigolee168/demo-springboot-docker</developerConnection>
-		<tag>v0.0.2</tag>
+		<tag>tiger</tag>
 		<url>https://github.com/aigolee168/demo-springboot-docker</url>
 	</scm>
 	<repositories>
@@ -241,10 +241,10 @@
 		</snapshotRepository>
 		<downloadUrl>http://mojo.codehaus.org/my-project</downloadUrl>
 		<site>
-			<id>mojo.website</id>
-			<name>Mojo Website</name>
-			<url>scp://beaver.codehaus.org/home/projects/mojo/public_html/</url>
-		</site>
+      <id>website</id>
+      <name>my virtual machine sites</name>
+      <url>scp://10.211.55.3/home/limin/sites</url>
+    </site>
 		<relocation>
 			<groupId>org.apache</groupId>
 			<artifactId>my-project</artifactId>
